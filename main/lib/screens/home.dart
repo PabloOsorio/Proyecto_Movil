@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:main/screens/usuario.dart';
+import 'package:main/screens/registro_usuario.dart';
 
 // ignore: camel_case_types
 class Inicio_Home extends StatefulWidget {
@@ -15,11 +16,22 @@ class _Inicio_HomeState extends State<Inicio_Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        backgroundColor: Colors.cyanAccent[200],
+        backgroundColor: Theme.of(context).colorScheme!.inversePrimary,
         title: Text("Buscaste - Categoria Dama"),
-        actions: const [
-          IconButton(onPressed: null, icon:Icon(
-          Icons.face_2_outlined),
+        actions:  [
+          IconButton(
+            icon: Icon(
+              Icons.face_2_outlined,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Registro(title: "Registro"),
+                ),
+              );
+
+            },
           iconSize: 45,),
         ],
       ),
