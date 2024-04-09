@@ -1,29 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:main/screens/lista_articulos.dart';
 
-
-class Usuario extends StatelessWidget {
-  final List<Producto> productos = [
-    Producto('Producto 1', "imagen Esperada 1", 'Descripción del producto 1'),
-    Producto('Producto 2', "imagen esperada 2", "Descripción del producto 2"),
-    Producto('Producto 1', "imagen Esperada 3", 'Descripción del producto 3'),
-    Producto('Producto 2', "imagen esperada 4", "Descripción del producto 4"),
-    // ...
-  ];
+class PerfilUsuario extends StatelessWidget {
+  const PerfilUsuario({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: ListView.builder(
-          itemCount: productos.length,
-          itemBuilder: (context, index) {
-            return Contenedor_Productos(producto: productos[index]);
-          },
-           
-        ),
-      ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Mi perfil'),
+          ),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                // Foto de perfil
+                const CircleAvatar(
+                  radius: 50,
+                  backgroundImage: NetworkImage('https://example.com/user.png'),
+                ),
+
+                // Nombre y correo
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Nombre de usuario',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      Text(
+                        'correo@ejemplo.com',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // Productos a la venta
+                const Divider(),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    'Productos a la venta',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: Image.network('https://example.com/producto.png'),
+                      title: const Text('Nombre del producto'),
+                      subtitle: const Text('\$100'),
+                      trailing: const Icon(Icons.arrow_forward),
+                    );
+                  },
+                ),
+
+                // Editar perfil
+                const Divider(),
+                ElevatedButton(
+                  onPressed: () {
+                    // Navegar a la pantalla de editar perfil
+                  },
+                  child: const Text('Editar perfil'),
+                ),
+              ],
+            ),
+          ),
+        )
     );
   }
 }
-

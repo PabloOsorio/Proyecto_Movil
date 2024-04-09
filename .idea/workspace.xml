@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb412416-1ce2-49a8-96a4-acfbbff12242" name="Changes" comment="" />
+    <list default="true" id="eb412416-1ce2-49a8-96a4-acfbbff12242" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/lib/screens/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/main/lib/screens/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/lib/screens/usuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/main/lib/screens/usuario.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +23,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectId" id="2enUr0N6Omk9SkjpnXuRS0jIfjE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,7 +39,7 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/ICO/OCTAVO_SEMESTRE/Movil/Proyecto_Movil/main",
+    "last_opened_file_path": "C:/Users/Juan/Desktop/login",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
