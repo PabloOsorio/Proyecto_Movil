@@ -1,41 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class Producto_widget extends StatelessWidget {
-  Producto producto;
-  
-  Producto_widget({super.key,required this.producto});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),
-      child: Column(
-        children: [
-          Text(producto.nombre, style: TextStyle(fontSize: 50),),
-          Text(producto.imagen),
-          Text(producto.descripcion)
-        ],
-      ),
-    );
-  }
-}
-
-
-
-class Contenedor_Productos extends StatelessWidget {
-  final Producto producto;
-  const Contenedor_Productos({super.key,required this.producto});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Producto_widget(producto: producto),
-    );
-  }
-}
-
-
 
 class Producto {
   final String nombre;
@@ -43,4 +7,58 @@ class Producto {
   final String descripcion;
 
   Producto(this.nombre, this.imagen, this.descripcion);
+}
+
+
+//Este contiene los productos en CARD 
+class Contenedor_Productos extends StatelessWidget {
+  final Producto producto;
+  const Contenedor_Productos({super.key,required this.producto});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(color: Colors.cyanAccent,
+      child: Padding(padding: EdgeInsets.all(10),
+    child: Column(children: [
+            Text(producto.nombre, style: TextStyle(fontSize: 20)),
+            Image.asset(producto.imagen),
+            Text(producto.descripcion),
+          ],
+          ),
+          ),
+    );
+  }
+}
+
+
+
+List<Producto>lproductos=[Producto("Bolsa Gucci", "Imagen de la bolsa", "Bolsa sobrevalorada"),
+Producto("Bufanda", "Imagen de la bufanda", "Para el frio"),
+Producto("Galletas", "Imagen de las galletas", "Galletas")];
+
+
+
+
+class ProductosList extends StatelessWidget {
+  const ProductosList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Todos los productos"),),
+      body:Column(
+        children: [
+          SizedBox(
+            height: 500,
+            child: ListView.builder(
+              
+              itemCount: lproductos.length,
+              itemBuilder: (context, index) {
+                return Contenedor_Productos(producto:lproductos[index]);
+            },),
+          )
+        ],
+      ),
+    );
+  }
 }
