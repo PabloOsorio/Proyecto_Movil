@@ -1,38 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:main/screens/subir_Articulo.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class Articulo extends StatefulWidget {
+  const Articulo({super.key, required this.title});
 
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Articulo> createState() => _Articulo();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Articulo extends State<Articulo> {
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Articulo(titulo, precio, "peluches", descripcion, ruta_foto,
+                        builder: (context) => Editar_Articulo(titulo, precio, "peluches", descripcion, ruta_foto,
                             title: "Articulo")));
               },
               child: Text('EDITAR'),

@@ -2,22 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:main/screens/registro_usuario.dart';
 
-class Articulo extends StatefulWidget {
+class Editar_Articulo extends StatefulWidget {
   final String titulo;
   final double precio;
   final String categoria;
   final String descripcion;
   final String foto;
-  const Articulo(this.titulo, double this.precio, this.categoria, this.descripcion, this.foto, {super.key, required this.title});
+  const Editar_Articulo(this.titulo, double this.precio, this.categoria, this.descripcion, this.foto, {super.key, required this.title});
 
 
   final String title;
 
   @override
-  State<Articulo> createState() => _Articulo();
+  State<Editar_Articulo> createState() => _Editar_Articulo();
 }
 
-class _Articulo extends State<Articulo> {
+class _Editar_Articulo extends State<Editar_Articulo> {
 
   @override
   Widget build(BuildContext context) {
